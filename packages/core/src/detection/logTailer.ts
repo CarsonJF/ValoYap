@@ -13,6 +13,7 @@ export class LogTailer {
   private partial = "";
   private timer: NodeJS.Timeout | null = null;
   private busy = false;
+  private birth = 0;
 
   constructor(
     private file: string,
@@ -45,7 +46,13 @@ export class LogTailer {
     try {
       let size: number;
       try {
-        size = (await fs.promises.stat(this.file)).size;
+        const st = await fs.promises.stat(this.file);
+        size = st.size;
+        if (this.birth && st.birthtimeMs !== this.birth) {
+          this.offset = 0; // file replaced (new game session)
+          this.partial = "";
+        }
+        this.birth = st.birthtimeMs;
       } catch {
         this.offset = 0;
         this.partial = "";

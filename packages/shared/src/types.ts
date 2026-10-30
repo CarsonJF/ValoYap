@@ -49,3 +49,22 @@ export interface PlaybackState {
   /** Set when a request was rejected (cooldown etc.). */
   lastRejected?: { clipId: string; reason: "cooldown" | "busy" | "missing" };
 }
+
+/** Everything the renderer needs, pushed from the main process on every change. */
+export interface AppState {
+  agents: AgentInfo[];
+  detection: AgentDetection;
+  /** manual pick if set, otherwise the detected agent */
+  effectiveAgentId: string | null;
+  config: import("./config").Config;
+  /** Combined ordered list (voice lines + user clips + shared) for the effective agent. Includes disabled. */
+  clips: ResolvedClip[];
+  playback: PlaybackState;
+  sdClients: number;
+  unknownFolders: string[];
+  paths: { voicelines: string; clips: string; cache: string; config: string };
+  /** folder name to drop files into for the effective agent */
+  agentFolder: string;
+  mode: "live" | "replay" | "mock";
+  lastError: string | null;
+}

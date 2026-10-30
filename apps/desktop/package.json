@@ -1,0 +1,37 @@
+{
+  "name": "@valoyap/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ValoYap desktop app: agent detection, soundboard playback, Stream Deck bridge",
+  "main": "dist/main/index.cjs",
+  "scripts": {
+    "build:main": "node scripts/build-main.mjs",
+    "build:renderer": "vite build",
+    "build": "pnpm build:main && pnpm build:renderer",
+    "dev": "pnpm build:main && vite build --mode development && electron . --replay",
+    "start": "electron .",
+    "replay": "electron . --replay",
+    "screens": "pnpm build && electron scripts/screens.cjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/bebas-neue": "^5.0.0",
+    "@fontsource/inter": "^5.0.0",
+    "koffi": "^2.9.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/ws": "^8.5.0",
+    "@valoyap/core": "workspace:*",
+    "@valoyap/shared": "workspace:*",
+    "@vitejs/plugin-react": "^4.3.0",
+    "electron": "^45.0.0",
+    "esbuild": "^0.24.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "vite": "^5.4.0"
+  }
+}

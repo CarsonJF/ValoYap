@@ -32,7 +32,7 @@ export class WindowsKeyInjector implements KeyInjector {
 
   private init(): (input: unknown) => number {
     if (this.send) return this.send;
-    const require = createRequire(import.meta.url);
+    const require = typeof __filename !== "undefined" ? createRequire(__filename) : createRequire(import.meta.url);
     const koffi = require("koffi");
     const user32 = koffi.load("user32.dll");
     const MOUSEINPUT = koffi.struct("MOUSEINPUT", {

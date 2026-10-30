@@ -153,3 +153,13 @@ describe("volume cap + playback + PTT", () => {
     expect(log.some((l) => l.startsWith("down"))).toBe(false);
   });
 });
+
+import { pickDefaultOutput } from "@valoyap/shared";
+describe("default output device", () => {
+  const d = (label: string, deviceId = label) => ({ label, deviceId });
+  it("prefers a Wave Link Soundboard, then other Wave Link inputs, never physical devices", () => {
+    expect(pickDefaultOutput([d("Speakers"), d("Wave Link Stream"), d("Wave Link Soundboard (Elgato Wave Link)")])?.label).toContain("Soundboard");
+    expect(pickDefaultOutput([d("Speakers"), d("Elgato Wave Link Stream"), d("Wave Link Aux 1")])?.label).toBe("Wave Link Aux 1");
+    expect(pickDefaultOutput([d("Speakers"), d("Headset")])).toBeNull();
+  });
+});

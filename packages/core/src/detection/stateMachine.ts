@@ -51,7 +51,8 @@ export class DetectionMachine {
       switch (e.kind) {
         case "gameflow": {
           const to = mapFlowState(e.to);
-          if (to) this.set(to);
+          // ignore stale lines from a previous session while the game is not running
+          if (to && this.running) this.set(to);
           break;
         }
         case "glz":
