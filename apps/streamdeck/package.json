@@ -1,0 +1,23 @@
+{
+  "name": "@valoyap/streamdeck",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "pack": "node scripts/build.mjs --pack",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@elgato/streamdeck": "^3.0.4",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/ws": "^8.5.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.0",
+    "@valoyap/shared": "workspace:*",
+    "fflate": "^0.8.2"
+  }
+}

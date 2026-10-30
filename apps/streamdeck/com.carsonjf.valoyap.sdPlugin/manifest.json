@@ -1,0 +1,125 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "SDKVersion": 2,
+  "UUID": "com.carsonjf.valoyap",
+  "Name": "ValoYap Soundboard",
+  "Version": "0.1.0.0",
+  "Author": "CarsonJF",
+  "Description": "Switches to the detected Valorant agent's soundboard. Requires the ValoYap desktop app.",
+  "Icon": "imgs/plugin/icon",
+  "Category": "ValoYap",
+  "CategoryIcon": "imgs/plugin/category",
+  "CodePath": "bin/plugin.js",
+  "Nodejs": {
+    "Version": "20",
+    "Debug": "disabled"
+  },
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.9"
+  },
+  "Actions": [
+    {
+      "UUID": "com.carsonjf.valoyap.clip",
+      "Name": "Clip",
+      "Tooltip": "Plays the clip bound to this key (the app fills it for the current agent).",
+      "Icon": "imgs/actions/icon",
+      "VisibleInActionsList": true,
+      "States": [
+        {
+          "Image": "imgs/actions/key"
+        }
+      ],
+      "Controllers": [
+        "Keypad"
+      ]
+    },
+    {
+      "UUID": "com.carsonjf.valoyap.prev",
+      "Name": "Previous page",
+      "Tooltip": "Previous page of clips.",
+      "Icon": "imgs/actions/icon",
+      "VisibleInActionsList": false,
+      "States": [
+        {
+          "Image": "imgs/actions/key"
+        }
+      ],
+      "Controllers": [
+        "Keypad"
+      ]
+    },
+    {
+      "UUID": "com.carsonjf.valoyap.next",
+      "Name": "Next page",
+      "Tooltip": "Next page of clips.",
+      "Icon": "imgs/actions/icon",
+      "VisibleInActionsList": false,
+      "States": [
+        {
+          "Image": "imgs/actions/key"
+        }
+      ],
+      "Controllers": [
+        "Keypad"
+      ]
+    },
+    {
+      "UUID": "com.carsonjf.valoyap.back",
+      "Name": "Back",
+      "Tooltip": "Return to the previous profile.",
+      "Icon": "imgs/actions/icon",
+      "VisibleInActionsList": false,
+      "States": [
+        {
+          "Image": "imgs/actions/key"
+        }
+      ],
+      "Controllers": [
+        "Keypad"
+      ]
+    }
+  ],
+  "Profiles": [
+    {
+      "Name": "profiles/ValoYap Soundboard Stream Deck",
+      "DeviceType": 0,
+      "Readonly": false,
+      "DontAutoSwitchWhenInstalled": true,
+      "AutoInstall": true
+    },
+    {
+      "Name": "profiles/ValoYap Soundboard Stream Deck Mini",
+      "DeviceType": 1,
+      "Readonly": false,
+      "DontAutoSwitchWhenInstalled": true,
+      "AutoInstall": true
+    },
+    {
+      "Name": "profiles/ValoYap Soundboard Stream Deck XL",
+      "DeviceType": 2,
+      "Readonly": false,
+      "DontAutoSwitchWhenInstalled": true,
+      "AutoInstall": true
+    },
+    {
+      "Name": "profiles/ValoYap Soundboard Stream Deck +",
+      "DeviceType": 7,
+      "Readonly": false,
+      "DontAutoSwitchWhenInstalled": true,
+      "AutoInstall": true
+    },
+    {
+      "Name": "profiles/ValoYap Soundboard Stream Deck Neo",
+      "DeviceType": 9,
+      "Readonly": false,
+      "DontAutoSwitchWhenInstalled": true,
+      "AutoInstall": true
+    }
+  ]
+}

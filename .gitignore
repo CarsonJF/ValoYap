@@ -4,12 +4,15 @@ out/
 build/
 target/
 *.log
+!packages/core/fixtures/*.log
+.build/
 .DS_Store
 # runtime caches and user data (never commit Riot assets or user clips)
-cache/
-clips/
+/cache/
+/clips/
 .valoyap/
-**/cache/
+/apps/*/cache/
+/packages/*/cache/
 *.wav
 *.wem
 *.mp3

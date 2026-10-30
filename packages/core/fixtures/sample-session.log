@@ -1,0 +1,12 @@
+[2026.10.29-23.28.25:609][  0]LogGameFlowStateManager: Reconcile called with the current state: Initialization. No action taken.
+[2026.10.29-23.28.31:603][219]LogPlatformCommon: Platform HTTP Query End. QueryName: [Pregame_GetPlayer], URL [GET https://glz-na-1.na.a.pvp.net/pregame/v1/players/d0f58137-6a56-5a05-be28-fcf107c40ddb], @trace_id:aaaa Response Code: [404]
+[2026.10.29-23.28.33:771][484]LogGameFlowStateManager: [PlatformTime: 345292.346212] Transitioning from Initialization to TransitionToMainMenu
+[2026.10.29-23.28.36:732][632]LogGameFlowStateManager: [PlatformTime: 345295.307187] Transitioning from TransitionToMainMenu to MainMenu
+[2026.10.29-23.40.01:100][100]LogGameFlowStateManager: [PlatformTime: 346000.1] Transitioning from MainMenu to TransitionToPregame
+[2026.10.29-23.40.02:100][110]LogGameFlowStateManager: [PlatformTime: 346001.1] Transitioning from TransitionToPregame to Pregame
+[2026.10.29-23.40.12:300][300]LogPlatformCommon: Platform HTTP Query End. QueryName: [Pregame_SelectCharacter], URL [POST https://glz-na-1.na.a.pvp.net/pregame/v1/matches/11111111-2222-3333-4444-555555555555/select/add6443a-41bd-e414-f6ad-e58d267f4e95], @trace_id:bbbb Response Code: [200]
+[2026.10.29-23.40.40:300][500]LogPlatformCommon: Platform HTTP Query End. QueryName: [Pregame_LockCharacter], URL [POST https://glz-na-1.na.a.pvp.net/pregame/v1/matches/11111111-2222-3333-4444-555555555555/lock/add6443a-41bd-e414-f6ad-e58d267f4e95], @trace_id:cccc Response Code: [200]
+[2026.10.29-23.41.10:000][700]LogGameFlowStateManager: [PlatformTime: 346100.1] Transitioning from Pregame to TransitionToInGame
+[2026.10.29-23.41.20:000][800]LogGameFlowStateManager: [PlatformTime: 346110.1] Transitioning from TransitionToInGame to InGame
+[2026.10.29-23.58.20:000][900]LogGameFlowStateManager: [PlatformTime: 347000.1] Transitioning from InGame to TransitionToMainMenu
+[2026.10.29-23.58.25:000][910]LogGameFlowStateManager: [PlatformTime: 347005.1] Transitioning from TransitionToMainMenu to MainMenu

@@ -29,7 +29,7 @@ export function AgentPanel({ state }: { state: AppState }) {
       <div className="agent-panel">
         <div className="eyebrow">
           <span>{manual ? "Manual pick" : "Detected agent"}</span>
-          {!manual && agent && sel && <span>{sel === "locked" ? "Locked" : "Hovering"}</span>}
+          {!manual && agent && sel && sel !== "none" && <span>{sel === "locked" ? "Locked" : "Hovering"}</span>}
         </div>
         <div className="portrait slide-in-l" key={agent?.uuid ?? "none"}>
           {agent?.portraitUrl ? <img src={agent.portraitUrl} alt="" /> : <div className="ph">{agent ? <Monogram name={agent.name} /> : "?"}</div>}
