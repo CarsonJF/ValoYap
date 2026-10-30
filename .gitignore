@@ -1,0 +1,23 @@
+node_modules/
+dist/
+out/
+build/
+target/
+*.log
+.DS_Store
+# runtime caches and user data (never commit Riot assets or user clips)
+cache/
+clips/
+.valoyap/
+**/cache/
+*.wav
+*.wem
+*.mp3
+*.ogg
+*.flac
+# allow nothing from Riot: agent art/audio is fetched at runtime
+apps/streamdeck/*.sdPlugin/bin/
+apps/streamdeck/*.sdPlugin/logs/
+*.streamDeckPlugin
+.env
+.env.*
